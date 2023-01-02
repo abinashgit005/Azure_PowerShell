@@ -1,0 +1,34 @@
+https://learn.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-9.2.0
+
+
+ExecutionPolicy
+===================
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+
+installation
+===========
+Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
+
+
+Connect-AzAccount
+
+ 
+
+Creating a resource group 
+
+ 
+
+
+output as below:
+ 
+
+help cmdlet for new resource group 
+
+ 
+
+We can create application object to avail a non-interactive login.
+1. Go to azure active directory.
+2. App registration > new App registration > mention appropriate name > create
+3. you can see Application ID, Object ID, Tenant ID
+
