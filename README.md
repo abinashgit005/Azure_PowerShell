@@ -1,6 +1,6 @@
-https://learn.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-9.2.0
-
 # Azure PowerShell
+## Reference link : 
+https://learn.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-9.2.0
 ## ExecutionPolicy
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
