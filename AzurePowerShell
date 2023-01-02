@@ -12,19 +12,20 @@ Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
 
 
 Connect-AzAccount
+![azconnect](required Images/azconnect.png)
 
  
 
 Creating a resource group 
-
+![resource Group](required Images/resourcegrp.png)
  
 
 
 output as below:
- 
+![output](required Images/output.png)
 
 help cmdlet for new resource group 
-
+![get-help command](required Images/gethelp.png)
  
 
 We can create application object to avail a non-interactive login.
