@@ -37,10 +37,26 @@ Get-Help New-AzResourceGroup -full
 ```
 ![get-help command](gethelp.png)
  
+We can not run Connect-AZAccount evry time. Instead of that we can create Application Object to access it.
 
 ## We can create application object to avail a non-interactive login.
 1. Go to azure active directory.
 2. App registration > new App registration > mention appropriate name > create
 3. you can see Application ID, Object ID, Tenant ID
+4. Add contributor role the the service principal.
 
+```PowerShell
+$ResourceGroup = "Powershell-grp"
+$Location = "Central India"
+$AppID = "5181d082-2ba5-4a01-bd94-XXXXXXXX"
+$TenantID = "df77f402-7f2e-47d2-bea6-XXXXXXXXXXXXX"
+$AppSecret = "BZ28Q~m02QX12ABvPYFzYESE556.UZXXXXXXXXXX"
+$scuresecret = $AppSecret | ConvertTo-SecureString -AsPlainText -Force
+$Credential = New-Object -TypeName  System.Management.Automation.PSCredential -ArgumentList $AppID,$scuresecret
 
+Connect-AzAccount -ServicePrincipal -Credential $Credential -Tenant $TenantID
+
+New-AzResourceGroup -Name $ResourceGroup -Location $Location
+```
+
+This will Automatically use the credentials and create desired resource for us.
