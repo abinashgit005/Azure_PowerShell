@@ -72,3 +72,25 @@ foreach($group in $RGlist)
 ```
 ## StorageAccount
 [ReferenceLink](https://learn.microsoft.com/en-us/powershell/module/az.storage/new-azstorageaccount)
+## Creating Storage Account
+
+```PowerShell
+$ResourceGroup = "Powershell-grp"
+$Location = "Central India"
+$StorageAccountName = "storage12test12"
+$kind = "StorageV2"
+$Sku = "Standard_LRS"
+
+$StorageAccountToShow = New-AzStorageAccount -ResourceGroupName $ResourceGroup -Location $Location -SkuName $Sku -Name $StorageAccountName -Kind $kind
+
+$StorageAccountToShow #Variable to show the Storage Account output after creation.
+```
+## Creating a Container
+here while creating i included context parameter from our previously created storage account.
+```PowerShell
+$ResourceGroup = "Powershell-grp"
+$StorageAccountName = "storage12test12"
+$containername = "data"
+$StorageAccountContext = Get-AzStorageAccount -ResourceGroupName $ResourceGroup -Name $StorageAccountName
+New-AzStorageContainer -Name $containername -Context $StorageAccountContext.Context -Permission Blob
+```
