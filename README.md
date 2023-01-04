@@ -71,3 +71,5 @@ foreach($group in $RGlist)
     "Provisioning state is : " + $group.ProvisioningState
 }
 ```
+## StorageAccount
+![Reference Link](/https://learn.microsoft.com/en-us/powershell/module/az.storage/new-azstorageaccount?view=azps-9.2.0)
