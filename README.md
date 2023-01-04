@@ -94,3 +94,7 @@ $containername = "data"
 $StorageAccountContext = Get-AzStorageAccount -ResourceGroupName $ResourceGroup -Name $StorageAccountName
 New-AzStorageContainer -Name $containername -Context $StorageAccountContext.Context -Permission Blob
 ```
+We can upload any local file to the container by adding the below command .
+```PowerShell
+Set-AzStorageBlobContent -Container $containername -Context $StorageAccountContext.Context -File "sample.txt" -blob "sample.txt"
+```
