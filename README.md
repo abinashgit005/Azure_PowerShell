@@ -60,3 +60,14 @@ New-AzResourceGroup -Name $ResourceGroup -Location $Location
 ```
 
 This will Automatically use the credentials and create desired resource for us.
+
+## List out all the ResourceGroup in your Subscription with status.
+
+```PowerShell
+$RGlist=Get-AzResourceGroup
+$RGlist #Printing the RGList just for cross checking.
+foreach($group in $RGlist)
+{
+    "Provisioning state is : " + $group.ProvisioningState
+}
+```
