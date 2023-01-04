@@ -72,4 +72,4 @@ foreach($group in $RGlist)
 }
 ```
 ## StorageAccount
-[ReferenceLink](/https://learn.microsoft.com/en-us/powershell/module/az.storage/new-azstorageaccount)
+[ReferenceLink](https://learn.microsoft.com/en-us/powershell/module/az.storage/new-azstorageaccount)
